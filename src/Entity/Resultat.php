@@ -15,6 +15,9 @@ class Resultat
     private ?int $id = null;
 
     #[ORM\Column]
+    private ?int $entiteId = null;
+
+    #[ORM\Column]
     private ?int $tour = null;
 
     #[ORM\Column]
@@ -33,7 +36,18 @@ class Resultat
     {
         return $this->id;
     }
+    
+    public function getEntiteId(): ?int
+    {
+        return $this->entiteId;
+    }
 
+    public function setEntiteId(int $entiteId): static
+    {
+        $this->entiteId = $entiteId;
+
+        return $this;
+    }
     public function getTour(): ?int
     {
         return $this->tour;
